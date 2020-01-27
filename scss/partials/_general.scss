@@ -1,0 +1,34 @@
+.cont-cuantify{
+    display: flex;    
+}
+
+.list-notification{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.card-circle-small{
+    $bgs: mix($color-principal, $color-green);
+    @include circle(100px, $bgs, "pedro");
+}
+
+.success{
+    @include notify($color-green);
+}
+
+.warning{
+    @include notify($color-orange);
+}
+
+.error{
+    @include notify($color-red);
+}
+.card-circle-mediun{
+    $bgs: mix($color-principal, $color-green);
+    @include circle(200px, $bgs, "carmelita");
+}
+.card-circle-big{
+    $bgs: mix($color-principal, $color-green);
+    @include circle(300px, $bgs, "juan");
+}

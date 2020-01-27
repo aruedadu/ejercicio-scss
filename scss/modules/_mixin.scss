@@ -1,0 +1,51 @@
+@mixin notify ($color){
+    width: 300px;
+    padding: 20px;
+    border: $color solid 1px;
+    border-radius: 0 0 25px 0;
+    font-family: $font-general;
+    display: flex;
+    align-items: center;
+    border-color: $color;
+    background: rgba($color, .6);
+    box-shadow: 0 0 20px rgba($black, .6);
+    img{
+        width: 40px;
+        margin-right: 20px;
+    }
+}
+
+@mixin letter($size) {
+    width: $size/2;
+    height: $size/20;
+    font-size: 14px;
+    font-family: $font-general;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    left: $size/2;
+    display: block;
+    background-color: $color-secundario;
+    color: $white;
+    border-radius: 20px;
+    padding: 10px;    
+}
+
+@mixin circle($size, $color, $person) {
+    width: $size;
+    height: $size;
+    background: {
+        color: $color;
+        image: url("../img/content/#{$person}.png");
+    }
+    border-radius: $size/2;
+    background-size: cover;
+    position: relative;
+    &:after {
+        content: $person;
+        @include letter($size);
+    }
+}

@@ -1,0 +1,45 @@
+@if $contrast == true{
+    $color-text: $white;
+    $color-principal: grayscale(#0033A0);
+    $color-secundario: grayscale(#00A7C0);
+    $color-green: grayscale(#438643);
+    $color-orange: grayscale(#ffa500);
+    $color-red: grayscale(#ff0000);
+    body{
+        background: $black;
+        img{
+            filter: grayscale(100%);
+        }
+    }
+}
+@each $var in $ubicacion{
+    .margin-#{$var}{
+        margin-#{$var}: 10px;
+    }
+}
+
+@for $i from 1 through 12 {
+    .grid-#{$i}{
+        width: (100%*$i)/12;
+        float: left;
+        //min-height: 100px;
+        //background: lighten($color-secundario, $i*3);
+        //background: darken($color-secundario, $i*3);
+    }
+}
+
+$varwhile: 1;
+@while $varwhile < 11 {
+    .items:nth-child(#{$varwhile}) {
+        width: 100px;
+        height: 50px;
+        //margin: 5px;
+        background: mix($color-red, $color-green, ($varwhile*10));        
+    }
+    $varwhile: $varwhile+1;
+}
+
+%mp0{
+    margin: 0px;
+    padding: 0px;
+}
